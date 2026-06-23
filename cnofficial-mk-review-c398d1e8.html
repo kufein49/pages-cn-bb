@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MK体育 ─ 站点介绍与使用说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fff1e0 0%, #ffd9b0 50%, #fbc59e 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .card {
+      max-width: 780px;
+      width: 100%;
+      background-color: #fffffffb;
+      backdrop-filter: blur(1px);
+      border-radius: 48px 24px 48px 24px;
+      padding: 2.8rem 2.5rem 3.2rem;
+      box-shadow: 0 18px 32px -12px rgba(160, 95, 40, 0.28), 0 8px 16px -6px rgba(100, 50, 15, 0.12);
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 220, 180, 0.3);
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      color: #2f1f0e;
+      margin-bottom: 0.25rem;
+      line-height: 1.15;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #6b4f32;
+      border-left: 3px solid #dc8f5a;
+      padding-left: 1rem;
+      margin: 0.3rem 0 2rem 0;
+      opacity: 0.82;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #3d2a17;
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.01em;
+      border-bottom: 1px dashed #eacab0;
+      padding-bottom: 0.4rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #2f241b;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #b55f2c;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.2rem 0.1rem;
+      border-radius: 30px;
+      transition: all 0.15s;
+      background: transparent;
+    }
+
+    a:hover {
+      background-color: #fedfc9;
+      color: #7c3f18;
+      text-decoration: underline wavy #a55727 1.2px;
+      text-underline-offset: 4px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1rem;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    .tag {
+      background: #f5e5d7;
+      color: #4d311b;
+      padding: 0.35rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 450;
+      letter-spacing: 0.02em;
+      border: 1px solid #eacbb3;
+    }
+
+    .highlight-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #d58b5a;
+      border-radius: 50%;
+      margin-right: 0.4rem;
+    }
+
+    .faq-item {
+      background: #f9f2eb;
+      border-radius: 30px;
+      padding: 0.8rem 1.2rem;
+      margin: 0.8rem 0;
+      border-left: 6px solid #d89a6e;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 550;
+      color: #3b2614;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    .action-note {
+      background: #fae8db;
+      border-radius: 32px;
+      padding: 1rem 1.5rem;
+      margin-top: 1.8rem;
+      font-size: 0.95rem;
+      color: #3b2614;
+      border: 1px solid #eac6ab;
+      box-shadow: inset 0 1px 4px #fff6ed;
+    }
+
+    .action-note span {
+      background: #d68b56;
+      color: #fcf2e8;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-right: 0.6rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #eddacb;
+      margin: 2rem 0 0.5rem;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #7a624b;
+      text-align: right;
+      margin-top: 0.6rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 520px) {
+      .card {
+        padding: 2rem 1.2rem 2.2rem;
+        border-radius: 36px 16px 36px 16px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subhead {
+        font-size: 0.95rem;
+      }
+
+      .section-title {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      body {
+        padding: 1rem;
+      }
+
+      .card {
+        padding: 1.5rem 1rem;
+      }
+
+      .faq-item {
+        padding: 0.6rem 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>MK体育</h1>
+    <div class="subhead">一个有关运动内容与赛事信息的小站</div>
+
+    <p>
+      关于 <a href="https://cnofficial-mk.com">MK体育</a>，可以这么说：它呈现的是一些围绕体育项目、比赛动态以及运动文化的资料整理。不管你是偶然路过，还是想找某个联赛的近期消息，这里可能会提供一个安静的阅读角落。
+    </p>
+
+    <div class="section-title">▎站点亮点 · 从简出发</div>
+    <div class="tag-list">
+      <span class="tag">⚽ 赛事简讯</span>
+      <span class="tag">🏀 运动常识</span>
+      <span class="tag">📋 信息聚合</span>
+      <span class="tag">🧭 不煽情 不误导</span>
+    </div>
+
+    <p>
+      没有浮夸的比分预测，也没有“必中”之类的承诺。内容偏向把已有的赛事信息或运动背景梳理清楚，方便你自己判断。如果你习惯自己搜集信息，这里算是一个补充参考。
+    </p>
+
+    <div class="section-title">▎适合怎么用</div>
+    <p>
+      你可以把它当作一个轻量的体育信息台——赛前看看阵容简报、赛后浏览一下概况，或者单纯翻翻某项运动的冷知识。页面排版力求干净，阅读负担不大。
+    </p>
+    <p>
+      值得一提的是，站内没有强制弹窗或诱导分享的设计。如果你对某个话题感兴趣，直接顺着页面浏览就行，不需要多余操作。
+    </p>
+
+    <div class="section-title">▎一点使用提醒</div>
+    <div class="faq-item">
+      <strong>内容来源可靠吗？</strong>
+      <p>站内信息主要整合自公开赛事数据和运动媒体，同时会标注引用来源（如果有）。任何数据都有时效性，建议结合官方渠道交叉确认。</p>
+    </div>
+    <div class="faq-item">
+      <strong>需要注册或付费吗？</strong>
+      <p>完全不需要。目前 <a href="https://cnofficial-mk.com">MK体育</a> 所有公开页面都免费浏览，不收集个人隐私信息。</p>
+    </div>
+    <div class="faq-item">
+      <strong>移动端体验如何？</strong>
+      <p>页面做了基础的响应式适配，手机阅读时字号和间距会自动调整。当然，部分表格或数据在窄屏上建议横屏查看。</p>
+    </div>
+
+    <div class="action-note">
+      <span>📌 说明</span>
+      如果你对某个运动项目或者联赛感兴趣，直接去站点里翻翻对应标签就行。信息量不算大，但胜在直接。
+    </div>
+
+    <hr>
+    <p style="margin-bottom:0; font-size:0.9rem; color:#5b4635;">
+      另外：本站不售卖任何商品或服务，也不存在“内幕消息”。任何声称与本站有关的收费行为均未得到授权。
+    </p>
+    <div class="footer-note">
+      MK体育 · 介绍页
+    </div>
+  </div>
+</body>
+</html>
