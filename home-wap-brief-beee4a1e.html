@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>MK体育 · 快速识别 · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5fbf9;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1d2b3a;
+            padding: 0 16px 32px;
+        }
+
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 首页横幅 — 杂志风 */
+        .hero {
+            background: linear-gradient(145deg, #0d2e2b 0%, #1b4f4a 60%, #236b62 100%);
+            border-radius: 28px 28px 24px 24px;
+            padding: 40px 28px 52px;
+            margin: 24px 0 32px;
+            box-shadow: 0 12px 28px rgba(0, 60, 50, 0.18);
+            position: relative;
+            overflow: hidden;
+            color: #e6f3ef;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -40px;
+            top: -30px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(110, 210, 190, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-weight: 350;
+            border-left: 4px solid #6ed2be;
+            padding-left: 14px;
+            background: rgba(255,255,255,0.04);
+            display: inline-block;
+        }
+
+        .hero .desc {
+            max-width: 600px;
+            font-size: 1rem;
+            opacity: 0.92;
+            background: rgba(0,0,0,0.12);
+            padding: 14px 20px;
+            border-radius: 40px 12px 40px 12px;
+            backdrop-filter: blur(2px);
+        }
+
+        /* 背景说明卡片 */
+        .bg-note {
+            background: white;
+            border-radius: 48px 16px 48px 16px;
+            padding: 28px 24px;
+            margin: 20px 0 28px;
+            box-shadow: 0 4px 12px rgba(50, 110, 100, 0.08);
+            border: 1px solid rgba(60, 150, 130, 0.15);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 18px;
+        }
+
+        .bg-note .icon-tag {
+            background: #1b5e55;
+            color: white;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 4px 16px;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .bg-note .text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .bg-note .text p {
+            margin-bottom: 6px;
+        }
+
+        .bg-note .text strong {
+            color: #116b5e;
+        }
+
+        /* 网格卡片 — 三篇自然介绍 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 36px 0 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px 8px 24px 8px;
+            padding: 24px 18px 20px;
+            box-shadow: 0 6px 14px rgba(0, 60, 50, 0.06);
+            transition: all 0.15s ease;
+            border: 1px solid #e2f0eb;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #72cabb;
+            box-shadow: 0 12px 24px rgba(30, 110, 95, 0.08);
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #dcf3ed;
+            color: #0d4f44;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #13463e;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2c4040;
+            margin-bottom: 8px;
+        }
+
+        .card .meta {
+            font-size: 0.8rem;
+            color: #618b80;
+            border-top: 1px solid #dceee8;
+            padding-top: 12px;
+            margin-top: 10px;
+        }
+
+        /* FAQ摘要 / 提示 */
+        .faq-note {
+            background: #eaf7f2;
+            border-radius: 32px 8px 32px 8px;
+            padding: 22px 24px;
+            margin: 30px 0 24px;
+            border-left: 6px solid #207d6c;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .faq-note h4 {
+            font-size: 1.1rem;
+            color: #0b4f43;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-note h4 span {
+            background: #1b6b5d;
+            color: white;
+            font-size: 0.7rem;
+            padding: 0 10px;
+            border-radius: 30px;
+            line-height: 1.6;
+        }
+
+        .faq-note ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+            margin-top: 6px;
+        }
+
+        .faq-note li {
+            font-size: 0.9rem;
+            background: white;
+            padding: 6px 18px 6px 14px;
+            border-radius: 40px;
+            border: 1px solid #c6e3da;
+            color: #174a40;
+        }
+
+        .faq-note li::before {
+            content: '▹';
+            color: #288573;
+            margin-right: 6px;
+        }
+
+        /* 页尾访问提示 */
+        .footer-note {
+            margin-top: 30px;
+            padding: 28px 22px 18px;
+            border-top: 2px dotted #b3d6cc;
+            text-align: center;
+            background: white;
+            border-radius: 48px 48px 16px 16px;
+            box-shadow: 0 -2px 12px rgba(0, 40, 30, 0.03);
+        }
+
+        .footer-note p {
+            font-size: 1rem;
+            color: #1f4d44;
+            margin-bottom: 8px;
+        }
+
+        .footer-note .link-sentence {
+            font-size: 1.05rem;
+            background: #e5f3ee;
+            display: inline-block;
+            padding: 6px 24px 6px 20px;
+            border-radius: 60px;
+            border: 1px solid #a7cdc1;
+            margin: 6px 0 8px;
+        }
+
+        .footer-note a {
+            color: #115f50;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #6ed2be;
+            padding-bottom: 2px;
+            transition: 0.1s;
+        }
+
+        .footer-note a:hover {
+            background: #6ed2be22;
+            border-bottom-color: #0a4b3f;
+        }
+
+        .footer-note .tiny {
+            font-size: 0.8rem;
+            color: #658f83;
+            margin-top: 12px;
+        }
+
+        /* 移动端友好细节 */
+        @media (max-width: 520px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 30px 18px 40px;
+            }
+            .bg-note {
+                flex-direction: column;
+                padding: 20px 16px;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 700px) {
+            .hero .desc {
+                max-width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- 首页横幅 hero -->
+    <div class="hero">
+        <h1>MK体育</h1>
+        <div class="sub">杂志专题 · 快速识别</div>
+        <div class="desc">
+            一眼看明白网站做什么：<strong>运动动态、赛事资讯、爱好者聚集地</strong>。没有花哨噱头，只有实在的体育内容节奏。
+        </div>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="bg-note">
+        <span class="icon-tag">背景</span>
+        <div class="text">
+            <p><strong>MK体育</strong> 的定位非常直接：为日常关注体育的人提供一个信息集中栈。无论你是想快速浏览比赛结果，还是想了解某项运动的趋势分析，这里都能用清晰的结构满足你。</p>
+            <p style="margin-top: 8px;">整个平台围绕“易识别、低干扰”设计，没有过度包装，每部分内容都指向同一个目的——让体育信息触手可及。</p>
+        </div>
+    </div>
+
+    <!-- 三段自然介绍 → 卡片网格 杂志式 -->
+    <div class="card-grid">
+        <div class="card">
+            <span class="tag">特点</span>
+            <h3>扁平 · 直接</h3>
+            <p>首页采用卡片式信息流，赛事、专题、数据一目了然。你不需要反复点击才能找到核心内容，每个模块都带有明确的视觉引导。</p>
+            <div class="meta">适合快速浏览 & 碎片阅读</div>
+        </div>
+        <div class="card">
+            <span class="tag">场景</span>
+            <h3>日常 & 专题</h3>
+            <p>从早晨的比分速递，到周末的深度赛事回顾，<strong>MK体育</strong>覆盖了多个时间颗粒度的内容。你既可以随手刷新，也可以慢慢翻阅长文。</p>
+            <div class="meta">通勤 · 午休 · 赛前准备</div>
+        </div>
+        <div class="card">
+            <span class="tag">结构</span>
+            <h3>干净 · 克制</h3>
+            <p>没有弹窗广告、没有浮夸动效。信息层级用蓝绿与留白区分，视觉重心始终在文字与数据上，还原体育阅读应有的专注感。</p>
+            <div class="meta">蓝绿色点缀 · 网格卡片</div>
+        </div>
+    </div>
+
+    <!-- FAQ摘要 / 提示部分 -->
+    <div class="faq-note">
+        <h4><span>?</span> 常见疑问摘要</h4>
+        <ul>
+            <li>网站主要更新什么运动？</li>
+            <li>信息更新频率如何？</li>
+            <li>移动端适配怎么样？</li>
+            <li>是否需要注册？</li>
+        </ul>
+        <p style="margin-top: 10px; font-size: 0.9rem; color: #1d5b4e;">简单回答：覆盖足球、篮球、网球等主流项目；每日同步赛事动态；手机浏览器即可流畅使用；大部分内容无需登录即可阅读。</p>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <p>如果你想直接体验这种干净、克制的体育信息流，可以前往</p>
+        <div class="link-sentence">
+            通过 <a href="https://home-wap-mk.com">MK体育</a> 快速了解最新动态
+        </div>
+        <p style="margin-top: 10px;">页面结构偏杂志风格，蓝绿点缀贯穿始终，适合日常随手翻看。</p>
+        <div class="tiny">基于真实定位 · 移动端友好设计</div>
+    </div>
+
+    <!-- 底部留白 -->
+    <div style="height: 12px;"></div>
+</div>
+</body>
+</html>
